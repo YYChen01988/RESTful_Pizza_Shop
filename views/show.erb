@@ -7,6 +7,7 @@
 <p>Quantity: <%= @order.quantity() %></p>
 
 
+
 <form action="/pizza-orders/<%= @order.id%>/delete" method="post">
   <input type="submit" value="Order deleted">
 </form>
