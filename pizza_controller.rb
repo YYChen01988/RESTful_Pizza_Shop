@@ -27,4 +27,9 @@ get '/pizza-orders/:id' do
 
 end
 
-#
+#Create
+post '/pizza-orders' do
+  @order = PizzaOrder.new(params)
+  @order.save()
+  erb(:create)
+end
