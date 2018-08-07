@@ -33,3 +33,23 @@ post '/pizza-orders' do
   @order.save()
   erb(:create)
 end
+
+# Delete
+post '/pizza-orders/:id/delete' do
+  @order = PizzaOrder.find(params[:id])
+  @order.delete()
+  erb(:delete)
+end
+
+# Edit
+get '/pizza-orders/:id/edit' do
+  @order = PizzaOrder.find(params[:id])
+  erb(:edit)
+end
+
+# Update
+post '/pizza-orders/:id' do
+  @order = PizzaOrder.new(params)
+  @order.update()
+  erb(:show)
+end
